@@ -1,0 +1,50 @@
+{
+  "name": "hellojs",
+  "version": "1.0.0",
+  "description": "This is my first attempt at a home-brew testing framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --testLocationInResults --runInBand",
+    "tsc": "tsc"
+  },
+  "jest": {
+    "preset": "jest-puppeteer",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/test/).*(spec|test).ts",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "Test Report",
+          "includeFailureMsg": true,
+          "includeConsoleLog": true
+        }
+      ]
+    ]
+  },
+  "author": "Basil",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/jest-environment-puppeteer": "^4.3.1",
+    "@types/node": "^13.11.1",
+    "@types/puppeteer": "^2.0.1",
+    "jest": "^25.3.0",
+    "jest-html-reporter": "^3.1.0",
+    "jest-puppeteer": "^4.4.0",
+    "puppeteer": "^2.1.1",
+    "ts-jest": "^25.3.1",
+    "typescript": "^3.8.3"
+  }
+}
